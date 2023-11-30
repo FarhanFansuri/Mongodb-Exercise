@@ -1,28 +1,19 @@
-# (finished)
-# # 1. Write a MongoDB query to display all the documents in the collection restaurants.
-# # solution
-# db.restaurant.find()
-# or 
-# db.restaurent.find().pretty()
+# # 6. Write a MongoDB query to display the first 5 restaurant which is in the borough Bronx.
+# # Click me to see the solution
+# db.restaurant.find({borough:'Bronx'}).limit(5).pretty()
 
-# (finished)
-# # 2. Write a MongoDB query to display the fields restaurant_id, name, borough and cuisine for all the documents in the collection restaurant.
-# # solution
-# db.restaurant.find({},{_id:1,name:1,borough:1,cuisine:1})
+# # 7.Write a MongoDB query to display the next 5 restaurants after skipping first 5 which are in the borough Bronx.
+# # Click me to see the solution
+# db.restaurant.find({borough:'Bronx'}).skip(5).limit(5).pretty()
 
-# (finished)
-# # 3. Write a MongoDB query to display the fields restaurant_id, name, borough and cuisine, but exclude the field _id for all the documents in the collection restaurant.
-# # solution
-# db.restaurant.find({},{_id:0,name:1,borough:1,cuisine:1})
+# # 8. Write a MongoDB query to find the restaurants who achieved a score more than 90.
+# # Click me to see the solution
+# db.restaurant.find({'grades.score':{$gt:90}}).pretty()
 
-# (finished)
-# # 4. Write a MongoDB query to display the fields restaurant_id, name, borough and zip code, but exclude the field _id for all the documents in the collection restaurant.
-# # solution
-# db.restaurant.find({},{_id:0,name:1,"borough":1,"address.zipcode":1})
+# # 9. Write a MongoDB query to find the restaurants that achieved a score, more than 80 but less than 100.
+# # Click me to see the solution
+# db.restaurant.find({'grades.score':{$gt:80,$lt:100}}).pretty()
 
-# (finished)
-# # 5. Write a MongoDB query to display all the restaurant which is in the borough Bronx.
-# # solution
-#  db.restaurant.find({borough:"Bronx"}).pretty() 
-#  or
-#   db.restaurant.find({borough:"Bronx"})
+# # 10. Write a MongoDB query to find the restaurants which locate in latitude value less than -95.754168.
+# # Click me to see the solution
+# db.restaurant.find({'address.coord.0':{$lt:-95.754168}}).pretty()
